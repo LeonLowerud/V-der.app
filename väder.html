@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Väderkollen | Global Forecast</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="väder.css">
+</head>
+<body>
+
+        <div class="header-content">
+            <h1>Väderkollen <span class="icon">🌍</span></h1>
+            <p>Din personliga överblick av vädret i realtid</p>
+            <div id="date-display" class="current-date"></div>
+        </div>
+    </header>
+
+    <main>
+        <section class="weather-section">
+            <div id="weather-container" class="container">
+                <p class="loading">Laddar väderdata...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Väderkollen Project</p>
+            <p>Data levereras live av <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap API</a></p>
+        </div>
+    </footer>
+
+    <script src="väder.js"></script>
+
+    <script>
+        const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('date-display').innerHTML = new Date().toLocaleDateString('sv-SE', dateOptions);
+    </script>
+</body>
+</html>
